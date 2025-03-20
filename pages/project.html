@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="..\css\style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body class="project-page">
+    <nav id="main-navbar">
+        <!-- Navbar will be dynamically loaded here -->
+    </nav>
+    <section id="projects" class="project-section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="academic">Academic</button>
+                <button class="filter-btn" data-filter="data-science">Data Science</button>
+                <button class="filter-btn" data-filter="data-analytics">Data Analytics</button>
+                <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+                <button class="filter-btn" data-filter="web-development">Web Development</button>
+            </div>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-item" data-category="web-development">
+                    <div class="project-card">
+                        <div class="project-front">
+                            <!-- <img src="..\assets\project images\Zenspace.png" alt="Project 1"> -->
+                            <h3>CGPA Calculator For CUET Students</h3>
+                            <p>One thing I have always hated of our university student portal is that it only provides grades for the term, leaving us to manually calculate the CGPA or GPA. This often means resorting to calculators or external websites where we have to input each grade individually—a tedious process. And I always wanted a easier way to do so. This project aims to simplify that. Just select all the results and copy it onto this website, and it will calculate the CGPA for you.</p>
+                            <p><strong>Tools Used : </strong>
+                                <span>Flask</span>
+                                <span>Pandas</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>Google Colab</span>    
+                            </p>
+                            <div class="project-buttons">
+                                <a href="#" class="btn view-gallery">View Gallery</a>
+                                <a href="https://cgpa-calculator-for-cuetians.vercel.app/result" class="btn">View Demo</a>
+                                <a href="https://github.com/ratnajit-dhar/CGPA-Calculator-for-CUETians" class="btn">View Code</a>
+                            </div>
+                        </div>
+                        <div class="project-back">
+                            <div class="gallery-container">
+                                <div class="gallery-images">
+                                    <img src="..\assets\project images\CGPA 1.png" alt="Project Image 1">
+                                    <img src="..\assets\project images\CGPA 2.png" alt="Project Image 2">
+                                </div>
+                                <div class="gallery-controls">
+                                    <button class="prev-btn">&lt;</button>
+                                    <span class="image-counter">1 / 3</span>
+                                    <button class="next-btn">&gt;</button>
+                                    <button class="close-gallery">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-item" data-category="machine-learning">
+                    <div class="project-card">
+                        <div class="project-front">
+                            <!-- <img src="..\assets\project images\Zenspace.png" alt="Project 1"> -->
+                            <h3>Resume Screening Website</h3>
+                            <p>I've developed a Streamlit app that leverages Machine Learning to automate and optimize the resume screening process. The app analyzes resumes and uses advanced Natural Language Processing (NLP) and Machine Learning algorithms to predict the suitable category for the candidate.</p>
+                            <p><strong>Tools Used : </strong>
+                                <span>Streamlit</span>
+                                <span>Jupyter Notebook</span>
+                                <span>Numpy</span>
+                                <span>Pandas</span>
+                                <span>Scikit-learn</span>
+                                <span>Matplotlib</span>
+                                <span>Seaborn</span>
+                                <span>Pickle</span>
+                                <span>PyPDF2</span>
+
+                            </p>
+                            <div class="project-buttons">
+                                <a href="#" class="btn view-gallery">View Gallery</a>
+                                <a href="https://automatic-resume-screening-app.streamlit.app/" class="btn">View Demo</a>
+                                <a href="https://github.com/ratnajit-dhar/Resume-Screening-App" class="btn">View Code</a>
+                            </div>
+                        </div>
+                        <div class="project-back">
+                            <div class="gallery-container">
+                                <div class="gallery-images">
+                                    <img src="..\assets\project images\Resume 1.png" alt="Project Image 1">
+                                </div>
+                                <div class="gallery-controls">
+                                    <button class="prev-btn">&lt;</button>
+                                    <span class="image-counter">1 / 3</span>
+                                    <button class="next-btn">&gt;</button>
+                                    <button class="close-gallery">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                 <!-- Change the following:
+                  data-category, project-front, view code  -->
+                <div class="project-item" data-category="machine-learning data-science">
+                    <div class="project-card">
+                        <div class="project-front">
+                            <!-- <img src="..\assets\project images\Zenspace.png" alt="Project 1"> -->
+                            <h3>Customer Churn Prediction</h3>
+                            <p>Developed a predictive model to identify customer churn using machine learning algorithms. This project leverages customer data to forecast whether a customer will leave the service. I used Ensemble Model of 3 models, Random Forest, XGBoost and LightGBM to predict churn.</p>
+                            <p><strong>Tools Used : </strong>
+                                <span>Jupyter Notebook</span>
+                                <span>Flask</span>
+                                <span>Pandas</span>
+                                <span>Scikit-learn</span>
+                                <span>Matplotlib</span>
+                                <span>Seaborn</span>
+                                <span>Pickle</span>
+                                <span>PyPDF2</span>
+
+                            </p>
+                            <div class="project-buttons">
+                                <a href="#" class="btn view-gallery">View Gallery</a>
+                                <!-- <a href="#" class="btn">View Demo</a> -->
+                                <a href="https://github.com/ratnajit-dhar/Customer-Churn-Prediction-Project" class="btn">View Code</a>
+                            </div>
+                        </div>
+                        <div class="project-back">
+                            <div class="gallery-container">
+                                <div class="gallery-images">
+                                    <img src="..\assets\project images\Churn 1.png" alt="Project Image 1">
+                                </div>
+                                <div class="gallery-controls">
+                                    <button class="prev-btn">&lt;</button>
+                                    <span class="image-counter">1 / 3</span>
+                                    <button class="next-btn">&gt;</button>
+                                    <button class="close-gallery">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-item" data-category="machine-learning">
+                    <div class="project-card">
+                        <div class="project-front">
+                            <!-- <img src="..\assets\project images\Zenspace.png" alt="Project 1"> -->
+                            <h3>Handwritten Digit Recognition</h3>
+                            <p>I've developed a Streamlit app that leverages TensorFlow/Keras and the MNIST dataset to recognize handwritten digits. Users can draw handwritten digits on the provided canvas, and the app predicts the digit.</p>
+                            <p><strong>Tools Used : </strong>
+                                <span>Streamlit</span>
+                                <span>Tensorflow</span>
+                                <span>Keras</span>
+
+                            </p>
+                            <div class="project-buttons">
+                                <a href="#" class="btn view-gallery">View Gallery</a>
+                                <a href="https://handwritten-digit-recognition-by-ratnajit-dhar.streamlit.app/" class="btn">View Demo</a>
+                                <a href="https://github.com/ratnajit-dhar/Handwritten-Digit-Recognition-by-Ratnajit-Dhar" class="btn">View Code</a>
+                            </div>
+                        </div>
+                        <div class="project-back">
+                            <div class="gallery-container">
+                                <div class="gallery-images">
+                                    <img src="..\assets\project images\HDR 1.png" alt="Project Image 1">
+                                </div>
+                                <div class="gallery-controls">
+                                    <button class="prev-btn">&lt;</button>
+                                    <span class="image-counter">1 / 3</span>
+                                    <button class="next-btn">&gt;</button>
+                                    <button class="close-gallery">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                 <!-- Change the following:
+                  data-category, project-front, view code  -->
+                <div class="project-item" data-category="academic web-development">
+                    <div class="project-card">
+                        <div class="project-front">
+                            <!-- <img src="..\assets\project images\Zenspace.png" alt="Project 1"> -->
+                            <h3>CUET Thesis & Project Portal</h3>
+                            <p>The CUET Thesis & Project Portal is a web-based platform designed to establish
+                                a centralized repository for preserving and sharing thesis projects carried out at Chittagong
+                                University of Engineering & Technology (CUET). The portal aims to serve as a
+                                comprehensive repository for published student theses and projects, and works by alumni. I have managed the Backend Development on this project.</p>
+                            <p><strong>Tools Used : </strong>
+                                <span>Firebase</span>
+
+                            </p>
+                            <div class="project-buttons">
+                                <a href="#" class="btn view-gallery">View Gallery</a>
+                                <!-- <a href="#" class="btn">View Demo</a> -->
+                                <a href="https://github.com/ratnajit-dhar/CUET-Thesis-and-Project-Portal" class="btn">View Code</a>
+                            </div>
+                        </div>
+                        <div class="project-back">
+                            <div class="gallery-container">
+                                <div class="gallery-images">
+                                    <img src="..\assets\project images\Thesis 1.jpg" alt="Project Image 1">
+                                    <img src="..\assets\project images\Thesis 2.jpeg" alt="Project Image 2">
+                                    <img src="..\assets\project images\Thesis 3.jpg" alt="Project Image 3">
+                                    <img src="..\assets\project images\Thesis 4.jpg" alt="Project Image 4">
+                                    <img src="..\assets\project images\Thesis 5.jpg" alt="Project Image 5">
+                                </div>
+                                <div class="gallery-controls">
+                                    <button class="prev-btn">&lt;</button>
+                                    <span class="image-counter">1 / 3</span>
+                                    <button class="next-btn">&gt;</button>
+                                    <button class="close-gallery">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <!-- Change the following:
+                  data-category, project-front, view code  -->
+                  <div class="project-item" data-category="data-analytics">
+                    <div class="project-card">
+                        <div class="project-front">
+                            <!-- <img src="..\assets\project images\Zenspace.png" alt="Project 1"> -->
+                            <h3>HR Analytics Dashboard using PowerBI</h3>
+                            <p>I've developed an HR Analytics Dashboard using Power BI that provides valuable insights into why employees are tending to leave the company. The dashboard leverages key HR metrics to analyze factors influencing employee attrition, such as salary job satisfaction, age etc.</p>
+                            <p><strong>Tools Used : </strong>
+                                <span>PowerBi</span>
+                                <span>Excel</span>
+                                
+
+                            </p>
+                            <div class="project-buttons">
+                                <a href="#" class="btn view-gallery">View Gallery</a>
+                                <!-- <a href="#" class="btn">View Demo</a> -->
+                                <!-- <a href="https://github.com/ratnajit-dhar/Customer-Churn-Prediction-Project" class="btn">View Code</a> -->
+                            </div>
+                        </div>
+                        <div class="project-back">
+                            <div class="gallery-container">
+                                <div class="gallery-images">
+                                    <img src="..\assets\project images\HR 1.png" alt="Project Image 1">
+                                </div>
+                                <div class="gallery-controls">
+                                    <button class="prev-btn">&lt;</button>
+                                    <span class="image-counter">1 / 3</span>
+                                    <button class="next-btn">&gt;</button>
+                                    <button class="close-gallery">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 7 -->
+                <div class="project-item" data-category="academic web-development">
+                    <div class="project-card">
+                        <div class="project-front">
+                            <!-- <img src="..\assets\project images\Zenspace.png" alt="Project 1"> -->
+                            <h3>TuitionEase </h3>
+                            <p>TuitionEase is a comprehensive solution for effective tuition administration. It is a platform designed to simplify and empower tutors in managing their tutoring businesses and to resolve scheduling conflicts. I have designed some pages, but mainly handled the backend part of the project</p>
+                            <p><strong>Tools Used : </strong>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+
+                            </p>
+                            <div class="project-buttons">
+                                <a href="#" class="btn view-gallery">View Gallery</a>
+                                <!-- <a href="#" class="btn">View Demo</a> -->
+                                <a href="https://github.com/TuitionEase/TuitionEase" class="btn">View Code</a>
+                            </div>
+                        </div>
+                        <div class="project-back">
+                            <div class="gallery-container">
+                                <div class="gallery-images">
+                                    <img src="..\assets\project images\Tuition 1.png" alt="Project Image 1">
+                                    <img src="..\assets\project images\Tuition 2.png" alt="Project Image 2">
+                                    <img src="..\assets\project images\Tuition 3.png" alt="Project Image 3">
+                                    <img src="..\assets\project images\Tuition 4.png" alt="Project Image 4">
+                                    <img src="..\assets\project images\Tuition 5.png" alt="Project Image 5">
+                                    <img src="..\assets\project images\Tuition 6.png" alt="Project Image 6">
+                                    <img src="..\assets\project images\Tuition 7.png" alt="Project Image 7">
+                                </div>
+                                <div class="gallery-controls">
+                                    <button class="prev-btn">&lt;</button>
+                                    <span class="image-counter">1 / 3</span>
+                                    <button class="next-btn">&gt;</button>
+                                    <button class="close-gallery">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-item" data-category="academic">
+                    <div class="project-card">
+                        <div class="project-front">
+                            <!-- <img src="..\assets\project images\Zenspace.png" alt="Project 1"> -->
+                            <h3>Zenspace - Meditation Based Software</h3>
+                            <p>ZenSpace is a Java-based meditation project dedicated to providing a serene digital environment. ZenSpace utilizes Java components to create an intuitive and visually appealing user interface. Users explore diverse meditation sessions, a secure donation form, and a dynamic digital shop using JavaSwing's intuitive interface.</p>
+                            <p><strong>Tools Used :</strong>
+                                <span>Java</span>
+                                <span>MySQL</span>
+                            </p>
+                            <div class="project-buttons">
+                                <a href="#" class="btn view-gallery">View Gallery</a>
+                                <!-- <a href="#" class="btn">View Demo</a> -->
+                                <a href="https://github.com/ratnajit-dhar/ZenSpace---Meditation-Based-Software" class="btn">View Code</a>
+                            </div>
+                        </div>
+                        <div class="project-back">
+                            <div class="gallery-container">
+                                <div class="gallery-images">
+                                    <img src="..\assets\project images\Zenspace 1.png" alt="Project Image 1">
+                                    <img src="..\assets\project images\Zenspace 2.png" alt="Project Image 2">
+                                    <img src="..\assets\project images\Zenspace 3.png" alt="Project Image 3">
+                                    <img src="..\assets\project images\Zenspace 4.png" alt="Project Image 4">
+                                </div>
+                                <div class="gallery-controls">
+                                    <button class="prev-btn">&lt;</button>
+                                    <span class="image-counter">1 / 3</span>
+                                    <button class="next-btn">&gt;</button>
+                                    <button class="close-gallery">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 9 -->
+                <div class="project-item" data-category="academic">
+                    <div class="project-card">
+                        <div class="project-front">
+                            <!-- <img src="..\assets\project images\Zenspace.png" alt="Project 1"> -->
+                            <h3>WORDGUESS</h3>
+                            <p>This is an academic project for course "Object Oriented Programming with C++". I have created a word guessing game using the concepts of OOP.</p>
+                            <p><strong>Tools Used :</strong>
+                                <span>C++</span>
+
+                            </p>
+                            <div class="project-buttons">
+                                <a href="#" class="btn view-gallery">View Gallery</a>
+                                <!-- <a href="#" class="btn">View Demo</a> -->
+                                <a href="https://github.com/ratnajit-dhar/Wordle-Using-OOP" class="btn">View Code</a>
+                            </div>
+                        </div>
+                        <div class="project-back">
+                            <div class="gallery-container">
+                                <div class="gallery-images">
+                                    <img src="..\assets\project images\OOP 1.png" alt="Project Image 1">
+                                    <img src="..\assets\project images\OOP 2.png" alt="Project Image 2">
+                                    <img src="..\assets\project images\OOP 3.png" alt="Project Image 3">
+                                </div>
+                                <div class="gallery-controls">
+                                    <button class="prev-btn">&lt;</button>
+                                    <span class="image-counter">1 / 3</span>
+                                    <button class="next-btn">&gt;</button>
+                                    <button class="close-gallery">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+    <script src="/js/navbar-loader.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

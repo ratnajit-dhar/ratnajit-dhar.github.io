@@ -1,0 +1,1825 @@
+:root {
+    --background-dark: #121212;        /* Deep, cool black */
+    --background-darker: #0a0a0a;      /* Even darker for depth */
+    --primary-color: #3498db;          /* Cool blue accent */
+    --secondary-color: #6B48FF;        /* Deep purple accent */
+    --text-color-light: #E0E0E0;       /* Light gray for text */
+    --text-color-muted: #888888;       /* Soft gray for secondary text */
+    --accent-color: #38B2AC;           /* Teal accent */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-darker);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+/* Navbar Styles */
+nav {
+    background-color: var(--background-darker);
+    color: var(--text-color-light);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    /* background-color: white; */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+.nav-link.active {
+    color: #fff; /* White text for the active link */
+    padding: 0px 10px; /* Add some padding for better visibility */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: underline; /* Add underline */
+    text-decoration-color: #3498db; /* Change underline color */
+    text-underline-offset: 8px; /* Lower the underline */
+    /* text-decoration-line: 3px; */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center;
+        height: auto; /* Adjust height dynamically */
+        padding: 10px 20px; /* Reduce padding for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: row; /* Stack links vertically */
+        flex-wrap: wrap;
+        gap: 10px; /* Add spacing between links */
+        width: 100%; /* Full width for links */
+        text-align: center; /* Center-align links */
+    }
+
+    nav ul li {
+        margin: 0; /* Remove left margin */
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Reduce font size for smaller screens */
+        padding: 8px 15px; /* Adjust padding for better touch targets */
+        /* display: block; Ensure links take full width */
+        width: 100%; /* Full width for links */
+    }
+
+    .logo {
+        font-size: 1.8rem; /* Adjust logo size */
+        margin-bottom: 10px; /* Add spacing below the logo */
+    }
+    .landing {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        height: 120vh;
+    }
+
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 200px !important;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* .profile-container {
+        margin-top: 400px !important;
+    } */
+    .section-title {
+        margin-top: 0px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center;
+        height: auto; /* Adjust height dynamically */
+        padding: 10px 20px; /* Reduce padding for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: row; /* Stack links vertically */
+        flex-wrap: wrap;
+        gap: 10px; /* Add spacing between links */
+        width: 100%; /* Full width for links */
+        text-align: center; /* Center-align links */
+    }
+    nav ul li a {
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 0.9rem; /* Further reduce font size for smaller screens */
+        padding: 6px 10px; /* Adjust padding for smaller touch targets */
+    }
+
+    .logo {
+        font-size: 1.5rem; /* Further reduce logo size */
+    }
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 200px !important;
+    }
+    .landing {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        height: 120vh;
+    }
+}
+
+/* @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+} */
+
+.logo {
+    font-family: 'Lato', sans-serif;
+    font-size: 2.2rem; /* Adjust the size of the logo text */
+    font-weight: bold; /* Make the logo text bold */
+    color: #007bff; /* Bootstrap primary color (blue) */
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 2px; /* Add spacing between letters */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.logo:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: none; /* Ensure no underline appears */
+}
+
+.landing {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    text-align: center;
+    background-color: var(--background-darker); /* Light background */
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Resume Button */
+.resume-button-container {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3498db; /* Button background color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.resume-button:hover {
+    background-color: #1e88e5; /* Darker blue on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Social Media Icons */
+/* Social Media Section */
+.social-icons-section {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.social-heading {
+    font-size: 1.2rem;
+    color: #3498db; /* Highlighted color for the heading */
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+    flex-wrap: wrap; /* Wrap icons on smaller screens */
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    text-decoration: none;
+    color: #fff; /* Default text color */
+    font-size: 1.4rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link i {
+    font-size: 2rem; /* Icon size */
+    color: #3498db; /* Icon color */
+    width: 50px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Makes the icons circular */
+    background-color: #1e1e1e; /* Background color for the icons */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link i:hover {
+    background-color: #3498db; /* Change background color on hover */
+    color: #fff; /* Change icon color on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+.social-link span {
+    font-size: 1rem; /* Text size */
+    color: #ddd; /* Text color */
+}
+
+.social-link:hover {
+    color: #3498db; /* Change text color on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+.social-link i:hover {
+    color: #fff; /* Change icon color on hover */
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.skill-item {
+    background-color: #1e1e1e; /* Dark background */
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.skill-item i,
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #4CA1DE; /* Cool blue accent */
+}
+
+.skill-item h3 {
+    font-size: 1.2rem;
+    color: #E0E0E0; /* Light gray text */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .skill-item {
+        padding: 15px;
+    }
+    
+    .skill-item i,
+    .skill-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .skill-item h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.social-link:hover {
+    color: #007bff; /* Change color on hover (Bootstrap primary blue) */
+}
+
+.container {
+    width: 100%; /* Default width for smaller screens */
+    /* max-width: 1200px; Limit the maximum width */
+    margin: 10px; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 150px;
+}
+
+
+
+.profile-image {
+    position: relative;
+    width: 275px;
+    height: 275px;
+    margin-top: -50px;
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden;
+    box-shadow: 0 0 20px 5px rgba(0, 123, 255, 0.6); /* Glowing effect */
+    animation: glow 2s infinite alternate;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 120%;
+    /* margin-top: 30px; */
+    object-fit: cover;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px 5px rgba(0, 123, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 30px 10px rgba(0, 123, 255, 0.9);
+    }
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: -20px;
+}
+
+/* Sections */
+.section {
+    /* backgrou */
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+
+    padding: 80px 0;
+}
+
+/* .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    color: var(--text-color);
+} */
+
+
+.section-title {
+    color: var(--text-color-light);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    /* color: #ffffff; */
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: var(--primary-color);
+    display: block;
+    margin: 10px auto 0;
+}
+
+/* About Section */
+
+.section {
+    background-color: var(--background-darker);
+    color: var(--text-color-light);
+
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--text-color-light);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: var(--primary-color);
+    display: block;
+    margin: 10px auto 0;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.about-box {
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
+                0 0 15px rgba(76, 161, 222, 0.6), /* Blue glow */
+                0 0 30px rgba(76, 161, 222, 0.4); /* Softer outer glow */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 50%;
+}
+
+.about-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
+                0 0 20px rgba(76, 161, 222, 0.8), /* Stronger blue glow on hover */
+                0 0 40px rgba(76, 161, 222, 0.6); /* Brighter outer glow on hover */
+}
+
+
+.about-text {
+    
+    width: 60%; /* Larger box */
+}
+
+.about-text p {
+    color: var(--text-color-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+    /* text-align: justify; */
+}
+
+.about-details {
+    background-color: var(--background-dark);
+    width: 35%; /* Smaller box */
+}
+
+
+.about-details h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.about-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-details li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center-align items */
+    }
+
+    .about-box {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .about-details {
+        width: 100%; /* Full width for smaller screens */
+        margin-top: 20px; /* Add spacing below the text box */
+    }
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.skill-item {
+    padding: 20px;
+    background-color: var(--background-dark);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
+                0 0 20px rgba(76, 161, 222, 0.8), /* Stronger blue glow on hover */
+                0 0 40px rgba(76, 161, 222, 0.6); /* Brighter outer glow on hover */
+}
+
+.skill-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.skills-subsection {
+    margin-bottom: 40px; /* Add spacing between subsections */
+}
+
+.skills-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #3498db; /* Highlighted color for subtitles */
+    text-align: center;
+}
+
+.skill-text {
+    font-size: 1rem;
+    color: var(--text-color-light);
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--background-darker);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Education Section */
+.education-timeline {
+    position: relative;
+    margin-top: 10px;
+    width: 1400px;
+    display: flex;
+    flex-direction: column;
+    
+    gap: 40px; /* Space between items */
+}
+
+/* Highlight CGPA */
+.education-cgpa {
+    font-size: 1rem; /* Slightly larger font size */
+    font-weight: bold; /* Make it bold */
+    color: #fff; /* Blue color for emphasis */
+    /* background-color: #f0f8ff; Light blue background for emphasis */
+    /* padding: 5px 10px; Add padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    
+    display: inline-block; /* Ensure proper spacing */
+    /* margin-top: 10px; Add spacing above the CGPA */
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #ddd; /* Divider color */
+    transform: translateX(-50%);
+}
+
+.education-item {
+    position: relative;
+    
+    width: 50%;
+    /* padding: 10px; */
+    margin-top: -30px;
+    opacity: 0; /* Initially hidden */
+    /* transform: translateY(50px); Start slightly below */
+    /* transition: all 0.6s ease-in-out; Smooth transition */
+}
+
+.education-item.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.education-item.left {
+    align-self: flex-start;
+    text-align: right;
+    padding-right: 40px;
+}
+
+.education-item.right {
+    align-self: flex-end;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.education-content {
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
+                0 0 15px rgba(76, 161, 222, 0.6), /* Blue glow */
+                0 0 30px rgba(76, 161, 222, 0.4); /* Softer outer glow */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    font-size: 1.2rem;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.education-content:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
+                0 0 20px rgba(76, 161, 222, 0.8), /* Stronger blue glow on hover */
+                0 0 40px rgba(76, 161, 222, 0.6); /* Brighter outer glow on hover */
+}
+
+.education-content h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.education-institute {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.education-duration {
+    font-size: 1rem;
+    color: var(--text-color-muted);
+    margin-bottom: 10px;
+}
+
+.education-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .education-timeline {
+        width: 100%; /* Full width for smaller screens */
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px; /* Reduce gap for smaller screens */
+    }
+
+    .education-timeline::before {
+        display: none; /* Hide the timeline divider on smaller screens */
+    }
+
+    .education-item {
+        width: 100%; /* Full width for smaller screens */
+        text-align: left; /* Align text to the left */
+        padding: 20px;
+    }
+
+    .education-item.left,
+    .education-item.right {
+        align-self: center; /* Center-align items */
+        text-align: left; /* Align text to the left */
+        padding: 20px; /* Remove side padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .education-timeline {
+        gap: 10px; /* Reduce gap for smaller screens */
+        width: 100%;
+    }
+    .education-item h3 {
+        font-size: 1.2rem; /* Reduce font size for smaller screens */
+    }
+
+    .education-institute {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .education-duration {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .education-description {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+}
+
+/* Projects Section */
+
+.project-page {
+    background-color: #000; /* Black background */
+    color: #fff !important;/* White text for contrast */
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 15px;
+    color: #3498db; /* Text color matches the border */
+    border: 2px solid #3498db; /* Border color */
+    background-color: transparent; /* No background */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: #fff; /* Change text color on hover */
+    background-color: #3498db; /* Add background on hover */
+    border-color: #2980b9; /* Slightly darker border on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Fixed 2 columns */
+    gap: 20px; /* Space between project items */
+    width: 100%; /* Full width */
+}
+
+/* Project Item */
+.project-item {
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
+                0 0 15px rgba(76, 161, 222, 0.6), /* Blue glow */
+                0 0 30px rgba(76, 161, 222, 0.4); /* Softer outer glow */
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px; /* Fixed height for all project items */
+    width: 100%; /* Full width within grid cell */
+    /* color: #fff; White text color */
+}
+
+.project-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
+                0 0 20px rgba(76, 161, 222, 0.8), /* Stronger blue glow on hover */
+                0 0 40px rgba(76, 161, 222, 0.6); /* Brighter outer glow on hover */
+}
+
+/* Project Image */
+.project-item img {
+    width: 100%;
+    height: 180px; /* Set a consistent height for images */
+    object-fit: cover; /* Ensure images are cropped proportionally */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Project Title */
+.project-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-align: center; /* Center-align the title */
+}
+
+/* Project Description */
+.project-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+    margin-bottom: 10px;
+    /* text-align: justify; Justify the description text */
+}
+
+/* Project Buttons */
+.project-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto; /* Push buttons to the bottom */
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    background-color: var(--primary-color);
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: rgb(30, 30, 90);
+    color: #fff
+
+}
+
+/* .btn.view-gallery {
+    background-color: #2ecc71;
+} */
+
+/* Tools Used Styling */
+/* Tools Used Styling */
+.project-item p strong {
+    font-size: 1rem; /* Slightly larger font size for "Tools Used" */
+    color: #fff; /* Darker color for emphasis */
+}
+
+/* .project-item p strong::after {
+    content: ":"; /* Add a colon after "Tools Used" */
+    /* margin-right: 0px; Add spacing after the colon */
+
+.project-item p span {
+    display: inline-block; /* Ensure proper spacing */
+    /* background-color: #3498db; Background color for the tools */
+    color: #fff; /* White text color */
+    font-weight: bold;;
+    font-size: 1rem; /* Font size for the tools */
+    border: none;
+    margin: 5px; /* Add spacing between tools */
+    text-align: center; /* Center-align the text */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Add this AFTER your existing CSS */
+
+/* Gallery and 3D Flip Styles */
+.project-card {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.project-front, 
+.project-back {
+    background-color: #2a2a2a;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(36, 33, 33);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+/* Highlight Project Title */
+.project-front h3 {
+    background-color: #3498db; /* Blue background */
+    color: #000; /* White text color */
+    padding: 10px 15px; /* Add padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center-align the text */
+    font-size: 1.2rem; /* Adjust font size */
+    margin-bottom: 15px; /* Add spacing below the title */
+    display: inline-block; /* Ensure the background wraps tightly around the text */
+}
+
+.project-back {
+    transform: rotateY(180deg);
+}
+
+.project-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-images {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Gallery Images */
+.gallery-images img {
+    position: absolute;
+    width: 100%; /* Make the image take the full width of the parent container */
+    height: auto; /* Maintain the aspect ratio of the original image */
+    object-fit: cover; /* Ensure the entire image fits within the container */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity changes */
+    opacity: 0; /* Initially hidden */
+}
+
+/* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 5px; */
+.gallery-images img.active {
+    opacity: 1; /* Show the active image */
+}
+
+.gallery-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.prev-btn, 
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(52, 152, 219, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(52, 152, 219, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.image-counter {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.close-gallery {
+    position: absolute;
+    /* top: 10px; */
+    /* right: 10px; */
+    bottom: -10px;
+    font-size: 1rem;
+    left:10%;
+    width: 120px;
+    height: 40px;
+    background-color: rgba(231, 76, 60, 0.7);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    pointer-events: auto;
+    transform: translateX(-50%); /* Adjust for centering */
+    z-index: 10;
+}
+
+.close-gallery:hover {
+    background-color: rgba(231, 76, 60, 0.9);
+}
+
+.project-section {
+    background-color: var(--background-darker);
+    color: #e0e0e0;
+    padding: 50px 0;
+}
+
+
+
+/* Responsive Adjustments for Project Page */
+@media (max-width: 768px) {
+    .project-section {
+        background-color: var(--background-darker);
+        color: #e0e0e0;
+        padding: 50px 0;
+        margin-top: 80px;
+    }
+    /* Filter Buttons */
+    .filter-buttons {
+        flex-wrap: wrap; /* Allow buttons to wrap */
+        gap: 10px; /* Add spacing between buttons */
+        justify-content: center; /* Center-align buttons */
+    }
+
+    .filter-btn {
+        font-size: 0.9rem; /* Reduce font size */
+        padding: 8px 15px; /* Adjust padding for smaller screens */
+        margin: 5px; /* Add spacing between buttons */
+    }
+
+    /* Project Grid */
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        gap: 20px; /* Reduce gap between projects */
+    }
+
+    /* Project Item */
+    .project-item {
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 15px; /* Reduce padding */
+    }
+
+    .project-item img {
+        height: 150px; /* Reduce image height */
+    }
+
+    .project-item h3 {
+        font-size: 1rem; /* Adjust title font size */
+    }
+
+    .project-item p {
+        font-size: 0.9rem; /* Adjust description font size */
+    }
+
+    /* Project Buttons */
+    .project-buttons {
+        display: flex; /* Use flexbox for layout */
+        justify-content: space-between; /* Space between buttons */
+        gap: 10px; /* Add spacing between buttons */
+        flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+        margin-top: 10px; /* Add spacing above buttons */
+    }
+
+    .btn {
+        flex: 1; /* Make buttons take equal space */
+        max-width: 48%; /* Ensure buttons don't exceed half the width */
+        padding: 8px 12px; /* Adjust padding for smaller buttons */
+        font-size: 0.9rem; /* Adjust font size */
+        text-align: center; /* Center-align text */
+        border-radius: 5px; /* Rounded corners */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Filter Buttons */
+    .filter-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center-align buttons */
+    }
+
+    .filter-btn {
+        width: 100%; /* Full width for buttons */
+        text-align: center; /* Center-align text */
+    }
+
+    /* Project Grid */
+    .project-grid {
+        gap: 15px; /* Reduce gap between projects */
+    }
+
+    /* Project Item */
+    .project-item img {
+        height: 120px; /* Further reduce image height */
+    }
+
+    .project-item h3 {
+        font-size: 0.9rem; /* Further reduce title font size */
+    }
+
+    .project-item p {
+        font-size: 0.8rem; /* Further reduce description font size */
+    }
+
+    /* Project Buttons */
+    .project-buttons {
+        gap: 8px; /* Reduce spacing between buttons */
+    }
+
+    .btn {
+        font-size: 0.8rem; /* Further reduce button font size */
+        padding: 8px 10px; /* Adjust padding */
+    }
+    .close-gallery {
+        width: 100px;
+        height: 30px;
+        font-size: 0.8rem;
+        left: 15%;
+    }
+}
+
+/* Experience */
+
+.experience-section {
+    background-color: var(--background-darker);
+    color: #e0e0e0;
+    padding: 50px 0;
+}
+
+@media (max-width: 768px) {
+    .experience-section {
+        background-color: var(--background-darker);
+        color: #e0e0e0;
+        padding: 50px 0;
+        margin-top: 80px;
+    }
+}
+
+/* .section-title {
+    text-align: center;
+    color: #4CA1DE;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #4CA1DE;
+} */
+
+.experience-category {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.category-title {
+    color: #4CA1DE;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #4CA1DE;
+    padding-bottom: 10px;
+}
+
+.category-title i {
+    margin-right: 15px;
+}
+
+.experience-timeline {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.experience-item {
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #4CA1DE;
+}
+
+.experience-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
+                0 0 20px rgba(76, 161, 222, 0.8), /* Stronger blue glow on hover */
+                0 0 40px rgba(76, 161, 222, 0.6); 
+}
+
+/* Experience Content Layout */
+.experience-content {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically align items */
+    gap: 20px; /* Add space between the logo and content */
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    color: #fff; /* White text */
+}
+
+/* Left Section: Company Logo */
+.experience-left {
+    flex: 0 0 100px; /* Fixed width for the logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.company-logo {
+    width: 120px; /* Adjust logo size */
+    height: 120px;
+    object-fit: contain; /* Ensure the logo fits within the container */
+    border-radius: 50%; /* Optional: Make the logo circular */
+    background-color: #fff; /* Optional: Add a background for contrast */
+    padding: 5px; /* Optional: Add padding around the logo */
+}
+
+/* Right Section: Content */
+.experience-right {
+    flex: 1; /* Take up the remaining space */
+}
+
+.experience-right h3,
+.experience-right h4 {
+    margin: 0;
+    color: #fff; /* White text */
+}
+
+.experience-right h4 a {
+    color: #3498db; /* Blue link color */
+    text-decoration: none;
+}
+
+.experience-right h3 a {
+    color: #3498db; /* Blue link color */
+    text-decoration: none;
+}
+
+.experience-right h4 a:hover {
+    text-decoration: underline;
+}
+
+.experience-right h3 a:hover {
+    text-decoration: underline;
+}
+
+.experience-details {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Add space between the items */
+    position: relative; /* Ensure pseudo-elements are positioned correctly */
+}
+
+.experience-details .date {
+    font-size: 0.9rem;
+    /* font-weight: bold; Make the date bold */
+    color: #fff; /* Blue color for the date */
+    position: relative;
+    padding-right: 15px; /* Add space for the divider */
+}
+
+.experience-details .location {
+    font-size: 0.9rem;
+    font-weight: bold;;
+    color: #ccc; /* Light gray for the location */
+    position: relative;
+    padding-left: 15px; /* Add space for the divider */
+}
+
+.experience-details .date-vol {
+    font-size: 0.9rem;
+    /* font-weight: bold; Make the date bold */
+    color: #fff; /* Blue color for the date */
+    position: relative;
+    padding-right: 15px; /* Add space for the divider */
+}
+
+/* Add a vertical divider between date and location */
+.experience-details .date::after {
+    content: ''; /* Empty content for the divider */
+    display: block;
+    width: 2px; /* Width of the divider */
+    height: 20px; /* Height of the divider */
+    background-color: #fff; /* Blue color for the divider */
+    position: absolute;
+    right: 0; /* Position the divider to the right of the date */
+    top: 50%;
+    transform: translateY(-50%); /* Center the divider vertically */
+}
+
+.experience-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.experience-role {
+    display: flex;
+    align-items: center;
+}
+
+.experience-role .position {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.divider {
+    margin: 0 10px;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.experience-responsibilities {
+    list-style: disc;
+    margin-left: 20px;
+    color: #ddd; /* Slightly lighter gray for list items */
+}
+
+
+@media (max-width: 768px) {
+    .experience-timeline {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        gap: 20px; /* Reduce gap between items */
+        padding: 0 10px; /* Add padding for smaller screens */
+    }
+
+    .experience-item {
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center-align content */
+        padding: 15px; /* Reduce padding for smaller screens */
+        box-shadow: none; /* Simplify shadow for smaller screens */
+    }
+
+    .experience-item h3 {
+        font-size: 1rem; /* Adjust title font size */
+        /* text-align: center; Center-align titles */
+    }
+
+    .experience-item p {
+        font-size: 0.9rem; /* Adjust description font size */
+        /* text-align: justify; Justify text for readability */
+    }
+
+    .experience-details {
+        /* flex-direction: column; Stack date and location vertically */
+        gap: 5px; /* Reduce spacing between items */
+    }
+
+    .experience-details .date,
+    .experience-details .location {
+        font-size: 0.8rem; /* Reduce font size */
+        text-align: left; /* Align text to the left */
+    }
+
+    .experience-role .position {
+        font-size: 0.9rem; /* Adjust font size for roles */
+    }
+
+    .experience-responsibilities {
+        margin-left: 15px; /* Adjust margin for smaller screens */
+        font-size: 0.8rem; /* Reduce font size for responsibilities */
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-item {
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center-align content */
+        padding: 15px; /* Reduce padding for smaller screens */
+        box-shadow: none; /* Simplify shadow for smaller screens */
+    }
+
+    .experience-content {
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center-align content */
+        gap: 10px; /* Add spacing between items */
+    }
+
+    .experience-left {
+        order: -1; /* Move the image to the top */
+        margin-bottom: 15px; /* Add spacing below the image */
+    }
+
+    .experience-left img,
+    .company-logo {
+        width: 100px; /* Adjust image size */
+        height: 100px;
+        object-fit: cover; /* Ensure the image fits within the container */
+        border-radius: 50%; /* Make the image circular */
+    }
+
+    .experience-right {
+        text-align: center; /* Center-align text */
+    }
+
+    .experience-right h3 {
+        font-size: 1rem; /* Adjust title font size */
+        margin-bottom: 10px;
+    }
+
+    .experience-right p {
+        font-size: 0.9rem; /* Adjust description font size */
+        /* text-align: justify; Justify text for readability */
+    }
+
+    .experience-details {
+        /* flex-direction: column; Stack date and location vertically */
+        gap: 5px; /* Reduce spacing between items */
+        text-align: center; /* Center-align details */
+    }
+
+    .experience-details .date-vol,
+    .experience-details .location-vol {
+        font-size: 0.8rem; /* Reduce font size */
+    }
+}
+/* Certification Page */
+
+/* Certification Section */
+.certification-section {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    padding: 60px 0;
+    margin-top: 20px;
+}
+
+.certification-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* .section-title {
+    text-align: center;
+    color: #4CA1DE;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(to right, transparent, #4CA1DE, transparent);
+} */
+
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.certification-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.certification-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #4CA1DE, #6B48FF);
+}
+
+.certification-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
+                0 0 20px rgba(76, 161, 222, 0.8), /* Stronger blue glow on hover */
+                0 0 40px rgba(76, 161, 222, 0.6); 
+}
+
+.certification-image {
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto; /* Centers the image horizontally */
+    display: flex; /* Ensures the content inside is centered */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+.certification-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certification-card:hover .certification-image img {
+    transform: scale(1.1);
+}
+
+.certification-content {
+    padding: 25px;
+}
+
+.certification-content h3 {
+    color: #4CA1DE;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.certification-content h4 {
+    color: #6B48FF;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.certification-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #888;
+}
+
+.certification-details .date {
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+.certification-details .location {
+    color: #6B48FF;
+}
+
+.certification-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background-color: rgba(76, 161, 222, 0.2);
+    color: #4CA1DE;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.certification-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.verify-btn, .download-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.verify-btn {
+    background-color: #4CA1DE;
+    color: #0a0a0a;
+}
+
+.download-btn {
+    background-color: #6B48FF;
+    color: #fff;
+}
+
+.verify-btn:hover, .download-btn:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .certification-grid {
+        grid-template-columns: 1fr;
+    }
+    .certification-section {
+        background-color: #0a0a0a;
+        color: #e0e0e0;
+        padding: 60px 0;
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .certification-grid {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        gap: 20px; /* Reduce gap between items */
+        padding: 0 10px; /* Add padding for smaller screens */
+    }
+
+    .certification-card {
+        height: auto; /* Allow height to adjust dynamically */
+        padding: 15px; /* Reduce padding inside each card */
+        box-shadow: none; /* Simplify shadow for smaller screens */
+    }
+
+    .certification-card h3 {
+        font-size: 1rem; /* Adjust title font size */
+        text-align: center; /* Center-align titles */
+    }
+
+    .certification-card p {
+        font-size: 0.9rem; /* Adjust description font size */
+        /* text-align: justify; Justify text for readability */
+    }
+
+    .certification-details {
+        flex-direction: column; /* Stack date and location vertically */
+        gap: 5px; /* Reduce spacing between items */
+    }
+
+    .certification-details .date,
+    .certification-details .location {
+        font-size: 0.8rem; /* Reduce font size */
+        text-align: left; /* Align text to the left */
+    }
+
+    .certification-skills {
+        gap: 5px; /* Reduce spacing between skill tags */
+    }
+
+    .skill-tag {
+        font-size: 0.7rem; /* Reduce font size for skill tags */
+        padding: 3px 8px; /* Adjust padding for smaller tags */
+    }
+
+    .certification-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Add spacing between buttons */
+    }
+
+    .verify-btn,
+    .download-btn {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 8px 12px; /* Adjust button padding */
+    }
+}
+
+@media (max-width: 480px) {
+    /* .certification-section {
+        padding: 30px 10px; /* Reduce padding for smaller screens */
+    /* }  */
+
+    .certification-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 15px; /* Reduce gap between items */
+        padding: 0 10px; /* Add padding for smaller screens */
+    }
+
+    .certification-card {
+        padding: 15px; /* Reduce padding inside each card */
+        box-shadow: none; /* Simplify shadow for smaller screens */
+    }
+
+    .certification-card h3 {
+        font-size: 1rem; /* Adjust title font size */
+        text-align: center; /* Center-align titles */
+    }
+
+    .certification-card p {
+        font-size: 0.9rem; /* Adjust description font size */
+        /* text-align: justify; Justify text for readability */
+    }
+
+    .certification-details {
+        flex-direction: column; /* Stack date and location vertically */
+        gap: 5px; /* Reduce spacing between items */
+    }
+
+    .certification-details .date,
+    .certification-details .location {
+        font-size: 0.8rem; /* Reduce font size */
+        text-align: left; /* Align text to the left */
+    }
+
+    .certification-skills {
+        gap: 5px; /* Reduce spacing between skill tags */
+    }
+
+    .skill-tag {
+        font-size: 0.7rem; /* Reduce font size for skill tags */
+        padding: 3px 8px; /* Adjust padding for smaller tags */
+    }
+
+    .certification-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Add spacing between buttons */
+    }
+
+    .verify-btn,
+    .download-btn {
+        font-size: 0.8rem; /* Adjust button font size */
+        padding: 8px 10px; /* Adjust button padding */
+    }
+}
