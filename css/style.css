@@ -732,7 +732,7 @@ footer {
 @media (max-width: 768px) {
     .education-timeline {
         width: 100%; /* Full width for smaller screens */
-        /* flex-direction: column; Stack items vertically */
+        flex-direction: column; /* Stack items vertically */
         gap: 20px; /* Reduce gap for smaller screens */
     }
 
