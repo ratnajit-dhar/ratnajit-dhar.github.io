@@ -19,7 +19,7 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #fff;
+    background-color: #000;
 }
 
 /* Navbar Styles */
@@ -624,7 +624,7 @@ footer {
 .education-timeline {
     position: relative;
     margin-top: 10px;
-    width: 1400px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     
@@ -731,26 +731,23 @@ footer {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .education-timeline {
-        width: 100%; /* Full width for smaller screens */
-        flex-direction: column; /* Stack items vertically */
-        gap: 20px; /* Reduce gap for smaller screens */
+        gap: 10px; /* Reduce gap for smaller screens */
+        width: 100%;
+    }
+    .education-item h3 {
+        font-size: 1.2rem; /* Reduce font size for smaller screens */
     }
 
-    .education-timeline::before {
-        display: none; /* Hide the timeline divider on smaller screens */
+    .education-institute {
+        font-size: 1rem; /* Adjust font size */
     }
 
-    .education-item {
-        width: 100%; /* Full width for smaller screens */
-        text-align: left; /* Align text to the left */
-        padding: 20px;
+    .education-duration {
+        font-size: 0.9rem; /* Adjust font size */
     }
 
-    .education-item.left,
-    .education-item.right {
-        align-self: center; /* Center-align items */
-        text-align: left; /* Align text to the left */
-        padding: 20px; /* Remove side padding */
+    .education-description {
+        font-size: 0.9rem; /* Adjust font size */
     }
 }
 
