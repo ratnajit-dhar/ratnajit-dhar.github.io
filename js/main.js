@@ -70,10 +70,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Existing filter functionality...
 
-    // Gallery functionality
+// ...existing code...
+
+// Function to load certification content
+function loadCertificationContent() {
+    fetch('pages/certification.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('certification').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading certification content:', error);
+            document.getElementById('certification').innerHTML = '<div class="container"><p>Error loading certifications. Please try again later.</p></div>';
+        });
+}
+
+// Add this to your existing DOMContentLoaded event listener
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('pages/project.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('project').innerHTML = data;
+            initializeGallery();
+        })
+        .catch(error => {
+            console.error('Error loading project content:', error);
+            document.getElementById('project').innerHTML = '<div class="container"><p>Error loading projects. Please try again later.</p></div>';
+        });
+});
+
+function initializeGallery() {
     const projectCards = document.querySelectorAll('.project-card');
 
     projectCards.forEach(card => {
@@ -87,41 +115,69 @@ document.addEventListener('DOMContentLoaded', function() {
         let currentImageIndex = 0;
 
         // Flip to gallery
-        viewGalleryBtn.addEventListener('click', () => {
-            event.preventDefault();
-            card.classList.add('flipped'); // Flip the card to show the gallery
-            showImage(0); // Show the first image
+        viewGalleryBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            card.classList.add('flipped');
+            showImage(0);
         });
-        
 
-        // Close gallery
+        // Rest of your gallery code...
         closeGalleryBtn.addEventListener('click', () => {
             card.classList.remove('flipped');
         });
 
-        // Previous image
         prevBtn.addEventListener('click', () => {
             currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
             showImage(currentImageIndex);
         });
 
-        // Next image
         nextBtn.addEventListener('click', () => {
             currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
             showImage(currentImageIndex);
         });
 
         function showImage(index) {
-            // Hide all images
             galleryImages.forEach(img => img.classList.remove('active'));
-            
-            // Show current image
             galleryImages[index].classList.add('active');
-            
-            // Update counter
             imageCounter.textContent = `${index + 1} / ${galleryImages.length}`;
         }
     });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('pages/experience.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('experience').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading experience content:', error);
+            document.getElementById('experience').innerHTML = '<div class="container"><p>Error loading experiences. Please try again later.</p></div>';
+        });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('pages/publication.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('publication').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading publication content:', error);
+            document.getElementById('publication').innerHTML = '<div class="container"><p>Error loading experiences. Please try again later.</p></div>';
+        });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('pages/certification.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('certification').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading certification content:', error);
+            document.getElementById('certification').innerHTML = '<div class="container"><p>Error loading publications. Please try again later.</p></div>';
+        });
 });
 
 const menuToggle = document.getElementById('menu-toggle');

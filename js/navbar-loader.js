@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
         navLinks.forEach(link => {
             const href = link.getAttribute('href').split('/').pop(); // Get the href of the link
             const href2 = '#'+link.getAttribute('href').split('#').pop(); // Get the href of the link
-            console.log('Link href:', href);
-            console.log('Link href2:,', href2)
+            // console.log('Link href:', href);
+            // console.log('Link href2:,', href2)
     
             // Check if the href matches the full path (path + hash)
             if (href === fullPath || href === `#${currentHash}` || href2 === fullPath || href2 === `#${currentHash}`) {
@@ -65,26 +65,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateURLOnScroll() {
-        const sections = document.querySelectorAll('section[id]'); // Select all sections with an ID
-        const observerOptions = {
-            root: null, // Use the viewport as the root
-            threshold: 0.6 // Trigger when 60% of the section is visible
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id'); // Get the ID of the section
-                    const newURL = `${window.location.origin}${window.location.pathname}#${id}`;
-                    history.pushState(null, null, newURL); // Update the URL without reloading the page
-
-                    // Re-highlight the active link based on the updated URL
-                    highlightActiveLink();
+        const sections = document.querySelectorAll('section[id]');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const scrollY = window.scrollY;
+                
+                // Check if we've scrolled past the section's top position
+                // Adding 100px offset for better detection
+                if (scrollY >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
                 }
             });
-        }, observerOptions);
 
-        sections.forEach(section => observer.observe(section));
+            if (current) {
+                // Update URL and highlight nav link
+                const newURL = `${window.location.origin}${window.location.pathname}#${current}`;
+                history.replaceState(null, null, newURL);
+                highlightActiveLink();
+                console.log('Current section:', current); // Debug log
+            }
+        });
     }
 
     loadNavbar();

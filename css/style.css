@@ -246,47 +246,65 @@ nav ul li a:hover,
     flex-wrap: wrap; /* Wrap icons on smaller screens */
 }
 
+/* Update social icons styles */
 .social-link {
     display: flex;
     align-items: center;
-    gap: 8px; /* Space between icon and text */
+    gap: 8px;
     text-decoration: none;
-    color: #fff; /* Default text color */
+    color: #fff;
     font-size: 1.4rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.social-link i {
-    font-size: 2rem; /* Icon size */
-    color: #3498db; /* Icon color */
-    width: 50px; /* Set a fixed width */
-    height: 50px; /* Set a fixed height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%; /* Makes the icons circular */
-    background-color: #1e1e1e; /* Background color for the icons */
+.social-icon {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #1e1e1e;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    object-fit: contain;
 }
 
-.social-link i:hover {
-    background-color: #3498db; /* Change background color on hover */
-    color: #fff; /* Change icon color on hover */
-    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+.social-link:hover .social-icon {
+    background-color: #3498db;
+    transform: scale(1.1);
 }
 
 .social-link span {
-    font-size: 1rem; /* Text size */
-    color: #ddd; /* Text color */
+    font-size: 1rem;
+    color: #ddd;
 }
 
 .social-link:hover {
-    color: #3498db; /* Change text color on hover */
-    transform: translateY(-5px); /* Slight lift effect */
+    color: #3498db;
+    transform: translateY(-5px);
 }
 
-.social-link i:hover {
-    color: #fff; /* Change icon color on hover */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+    
+    .social-link span {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        padding: 6px;
+    }
+    
+    .social-link span {
+        font-size: 0.8rem;
+    }
 }
 
 /* Skills Section */
@@ -382,7 +400,154 @@ nav ul li a:hover,
     margin-top: 150px;
 }
 
+/* Publication Section Styles */
+.publication-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+}
 
+.publication-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.publication-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #4CA1DE, #6B48FF);
+}
+
+.publication-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
+                0 0 20px rgba(76, 161, 222, 0.8),
+                0 0 40px rgba(76, 161, 222, 0.6);
+}
+
+.publication-content {
+    padding: 25px;
+}
+
+.publication-title {
+    color: #4CA1DE;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.publication-authors {
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+.publication-authors .author {
+    margin-right: 5px;
+}
+
+.publication-authors .highlight {
+    color: #309ef2;
+    font-weight: bold;
+}
+
+.publication-venue {
+    color: #888;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.publication-venue .conference {
+    color: #4CA1DE;
+}
+
+.publication-abstract {
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.publication-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.publication-tags .tag {
+    background-color: rgba(76, 161, 222, 0.2);
+    color: #4CA1DE;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.publication-links {
+    display: flex;
+    gap: 15px;
+}
+
+.pub-link {
+    text-decoration: none;
+    color: #e0e0e0;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pub-link:hover {
+    background-color: #4CA1DE;
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .publication-grid {
+        padding: 10px;
+    }
+
+    .publication-title {
+        font-size: 1.2rem;
+    }
+
+    .publication-content {
+        padding: 20px;
+    }
+
+    .publication-links {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .publication-title {
+        font-size: 1.1rem;
+    }
+
+    .publication-abstract {
+        font-size: 0.9rem;
+    }
+
+    .publication-tags .tag {
+        font-size: 0.8rem;
+    }
+
+    .pub-link {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
 
 .profile-image {
     position: relative;
@@ -1424,7 +1589,7 @@ footer {
 }
 
 .experience-details .date-vol {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     /* font-weight: bold; Make the date bold */
     color: #fff; /* Blue color for the date */
     position: relative;
@@ -1573,6 +1738,21 @@ footer {
     .experience-details .date-vol,
     .experience-details .location-vol {
         font-size: 0.8rem; /* Reduce font size */
+    }
+}
+
+/* Add/modify these styles */
+.organizations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 30px;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .organizations-grid {
+        grid-template-columns: 1fr; /* Single column for mobile */
+        gap: 20px;
     }
 }
 /* Certification Page */
@@ -1860,5 +2040,52 @@ footer {
     .download-btn {
         font-size: 0.8rem; /* Adjust button font size */
         padding: 8px 10px; /* Adjust button padding */
+    }
+}
+
+/* Publication Contribution Styles */
+.publication-contribution {
+    margin: 15px 0;
+    padding: 15px;
+    background-color: rgba(76, 161, 222, 0.1);
+    border-radius: 8px;
+}
+
+.contribution-title {
+    color: #4CA1DE;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.contribution-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.contribution-list li {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.contribution-list li::before {
+    content: "•";
+    color: #4CA1DE;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .contribution-title {
+        font-size: 0.9rem;
+    }
+    
+    .contribution-list li {
+        font-size: 0.85rem;
     }
 }
