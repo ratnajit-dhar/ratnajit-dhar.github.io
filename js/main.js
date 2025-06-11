@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             document.getElementById('project').innerHTML = data;
             initializeGallery();
+            InitializeFiltering();
         })
         .catch(error => {
             console.error('Error loading project content:', error);
@@ -141,6 +142,30 @@ function initializeGallery() {
             galleryImages[index].classList.add('active');
             imageCounter.textContent = `${index + 1} / ${galleryImages.length}`;
         }
+    });
+}
+
+function InitializeFiltering(){
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.getAttribute('data-filter');
+
+            projectItems.forEach(item => {
+                const categories = item.getAttribute('data-category').split(' ');
+
+                if (filter === 'all' || categories.includes(filter)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
     });
 }
 
